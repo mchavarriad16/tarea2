@@ -1,0 +1,287 @@
+:root {
+  font-size: 16px;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: bisque;
+  line-height: 1.5;
+}
+
+/* ===== Encabezado ===== */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  background: #006241;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header img {
+  width: 2rem;
+}
+
+header h1 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+/* ===== Parallax ===== */
+
+.parallax {
+  background-image: url('assets/cafe4.jpg');
+  height: 200px;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ===== Servicios ===== */
+
+.servicios {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* ===== Tarjetas ===== */
+
+.card {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Imagen */
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+/* Contenido */
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ===== botones ===== */
+
+.card button {
+  margin-top: auto;
+  padding: 0.6rem;
+  border: none;
+  background: #006241;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.card button:hover {
+  background: #008f5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card button:active {
+  transform: scale(0.96);
+}
+
+/* ===== Footer ===== */
+
+.footer {
+  background: #006241;
+  color: white;
+  padding: 1.5rem 1rem;
+}
+
+.footer-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Redes */
+
+.redes {
+  display: flex;
+  gap: 1rem;
+}
+
+.redes a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover enlaces */
+.redes a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+.redes a:hover::after {
+  width: 100%;
+}
+
+.redes a:hover {
+  opacity: 0.8;
+}
+
+/* Media Queries*/
+
+/* Dispositivos pequeños*/
+
+
+@media (max-width: 480px) {
+
+  header h1 {
+    font-size: 1.1rem;
+  }
+
+  .parallax {
+    height: 160px;
+    font-size: 1.2rem;
+  }
+
+  .servicios {
+    padding: 1rem;
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .card button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+
+/* Tablet*/
+
+@media (min-width: 768px) {
+
+  header {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .parallax {
+    height: 250px;
+    font-size: 1.8rem;
+  }
+
+  .servicios {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 45%;
+    max-width: 400px;
+  }
+
+  .footer-contenido {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: auto;
+  }
+}
+
+
+/* Desktop */
+
+
+@media (min-width: 1024px) {
+
+  header {
+    justify-content: flex-start;
+    padding: 1rem 7%;
+  }
+
+  .parallax {
+    height: 300px;
+    font-size: 2rem;
+    background-attachment: fixed;
+  }
+
+  .servicios {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .card {
+    width: 30%;
+  }
+
+  .footer-contenido {
+    max-width: 1200px;
+  }
+
+  .redes a {
+    font-size: 1rem;
+  }
+}
